@@ -1,13 +1,12 @@
-var precoLitro = document.querySelector("#precoLitro");
-var valorPagamento = document.querySelector("#valorPagamento");
+var peso = document.querySelector("#peso");
 var btCalcular = document.querySelector("#btCalcular");
 var h3Resultado = document.querySelector("#h3Resultado");
 
-function calcularLitros() {
-    var litros = Number(valorPagamento.value) / Number(precoLitro.value);
-    h3Resultado.innerHTML = `Você conseguiu colocar ${litros.toFixed(2)} litros de gasolina.`;
+function calcularValor() {
+    var valor = Number(peso.value) * 12;
+    h3Resultado.innerHTML = `Valor a pagar: R$ ${valor.toFixed(2)}`;
 }
 
 btCalcular.onclick = function() {
-    calcularLitros();
+    calcularValor();
 }
