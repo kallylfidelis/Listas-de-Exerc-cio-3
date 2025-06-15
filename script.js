@@ -1,13 +1,16 @@
-var dia = document.querySelector("#dia");
-var mes = document.querySelector("#mes");
+var quantidadePequena = document.querySelector("#quantidadePequena");
+var quantidadeMedia = document.querySelector("#quantidadeMedia");
+var quantidadeGrande = document.querySelector("#quantidadeGrande");
 var btCalcular = document.querySelector("#btCalcular");
 var h3Resultado = document.querySelector("#h3Resultado");
 
-function calcularDias() {
-    var diasPassados = (Number(mes.value) - 1) * 30 + Number(dia.value);
-    h3Resultado.innerHTML = `Dias passados desde o início do ano: ${diasPassados}`;
+function calcularTotal() {
+    var total = (Number(quantidadePequena.value) * 10) +
+                (Number(quantidadeMedia.value) * 12) +
+                (Number(quantidadeGrande.value) * 15);
+    h3Resultado.innerHTML = `Total arrecadado: R$ ${total.toFixed(2)}`;
 }
 
 btCalcular.onclick = function() {
-    calcularDias();
+    calcularTotal();
 }
