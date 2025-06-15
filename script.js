@@ -1,12 +1,13 @@
-var peso = document.querySelector("#peso");
+var dia = document.querySelector("#dia");
+var mes = document.querySelector("#mes");
 var btCalcular = document.querySelector("#btCalcular");
 var h3Resultado = document.querySelector("#h3Resultado");
 
-function calcularValor() {
-    var valor = Number(peso.value) * 12;
-    h3Resultado.innerHTML = `Valor a pagar: R$ ${valor.toFixed(2)}`;
+function calcularDias() {
+    var diasPassados = (Number(mes.value) - 1) * 30 + Number(dia.value);
+    h3Resultado.innerHTML = `Dias passados desde o início do ano: ${diasPassados}`;
 }
 
 btCalcular.onclick = function() {
-    calcularValor();
+    calcularDias();
 }
